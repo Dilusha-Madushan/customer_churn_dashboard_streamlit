@@ -6,6 +6,9 @@ st.set_page_config(page_title="Churn Dashboard",
 
 from sqlalchemy import true
 
+import plotly.figure_factory as ff
+import plotly.graph_objects as go
+
 import streamlit_authenticator as stauth
 import requests
 import json
@@ -105,20 +108,20 @@ st.markdown("<h1 style='text-align: center; color: red;'><span> 📊 </span>Cust
 
 st.markdown("##")
 
-names = ["Dilusha Madushan", "Mahinda Rajapaksha"]
-usernames = ["dilusha", "maina"]
-secret_keys = "abcdef"
+# names = ["Dilusha Madushan", "Mahinda Rajapaksha"]
+# usernames = ["dilusha", "maina"]
+# secret_keys = "abcdef"
 
-file_path = Path(__file__).parent / "private/hashed_pw.pkl"
-with file_path.open("rb") as file:
-    hashed_passwords = pickle.load(file)
+# file_path = Path(__file__).parent / "private/hashed_pw.pkl"
+# with file_path.open("rb") as file:
+#     hashed_passwords = pickle.load(file)
 
 
-def get_authenticator(authenticator):
-    if authenticator is None:
-        return stauth.Authenticate(names, usernames, hashed_passwords,
-                                   "churn_dashboard", secret_keys, cookie_expiry_days=1)
-    return authenticator
+# def get_authenticator(authenticator):
+#     if authenticator is None:
+#         return stauth.Authenticate(names, usernames, hashed_passwords,
+#                                    "churn_dashboard", secret_keys, cookie_expiry_days=1)
+#     return authenticator
 
 
 # authenticator = get_authenticator(None)
