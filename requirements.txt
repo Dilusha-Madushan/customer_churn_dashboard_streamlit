@@ -3,7 +3,7 @@ joblib==1.0.1
 pandas<1.2.4
 plotly==5.7.0
 python-dotenv==0.20.0
-bcrypt==0.3.2
+bcrypt<0.3.2
 requests==2.27.1
 streamlit==1.10.0
 streamlit_lottie==0.0.3
